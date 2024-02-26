@@ -1,0 +1,13 @@
+name: Hello Word 
+on:
+workflow_dispatch:
+
+jobs: 
+print-hello-word:
+
+runs-on: ubntu-latest
+
+steps:
+
+- name: Say hello 
+run : echo "Hello Word"
