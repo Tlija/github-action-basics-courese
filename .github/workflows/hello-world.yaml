@@ -1,12 +1,12 @@
-name: Hello Word 
+name: Hello World
+
 on:
-workflow_dispatch:
+  workflow_dispatch:
 
-jobs: 
-print-hello-world:
+jobs:
+  print-hello-world:
+    runs-on: ubuntu-latest
 
-runs-on: ubuntu-latest
-
-steps:
-- name: Say hello 
-run : echo "Hello Word"
+    steps:
+      - name: Say hello
+        run: echo "Hello World"
