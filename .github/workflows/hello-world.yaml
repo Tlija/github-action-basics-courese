@@ -3,11 +3,12 @@ on:
 workflow_dispatch:
 
 jobs: 
-print-hello-word:
+print-hello-world:
 
-runs-on: ubntu-latest
+runs-on: ubuntu-latest
 
 steps:
-
 - name: Say hello 
 run : echo "Hello Word"
+
+//tertzst
