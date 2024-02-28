@@ -1,0 +1,14 @@
+on:
+  push:
+    tags:
+      - "**"
+
+name: Integration
+
+jobs:
+  realease:
+    name: Relase
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker Login
