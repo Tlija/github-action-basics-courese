@@ -1,6 +1,11 @@
-name: Pull Resquest Example
+name: Pull Request Example
 
 on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - typescript-project/**
   workflow_dispatch:
 
 jobs:
@@ -20,6 +25,7 @@ jobs:
         with:
           node-version: "16.x"
           cache: 'npm'
+          cache-dependency-path: typescript-project/yarn.lock
 
       # Install Yarn
       - name: Install Yarn
@@ -27,16 +33,16 @@ jobs:
 
       # Install libraries
       - name: Install dependencies
-        run: yarn install --frozen-lo
+        run: yarn install --frozen-lockfile
 
       # Run linting
       - name: Run linting
         run: yarn lint
 
-        # Compile the  code
-      - name: Build  project
+      # Compile the code
+      - name: Build project
         run: yarn build
 
-        # Run tests
+      # Run tests
       - name: Run tests
         run: yarn test
